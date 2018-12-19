@@ -21,33 +21,33 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_main);
 
-        r = new Random();
+         r = new Random();
 
-        input_minimum = (EditText) findViewById(R.id.input_minimum);
-        input_maximum = (EditText) findViewById(R.id.input_maximum);
-        random = (Button) findViewById(R.id.random);
-        output = (TextView) findViewById(R.id.output);
+         input_minimum = (EditText) findViewById(R.id.input_minimum);
+         input_maximum = (EditText) findViewById(R.id.input_maximum);
+         random = (Button) findViewById(R.id.random);
+         output = (TextView) findViewById(R.id.output);
 
-                random.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+              random.setOnClickListener(new View.OnClickListener() {
+                   @Override
+                   public void onClick(View v) {
                         String tempminimum, tempmaximum;
                         tempminimum = input_minimum.getText().toString();
                         tempmaximum = input_maximum.getText().toString();
                         if (!tempminimum.equals("") && !tempmaximum.equals("")) ;
                         {
-                            minimum = Integer.parseInt(tempminimum);
-                            maximum = Integer.parseInt(tempmaximum);
-                            if (maximum > minimum) {
-                                tempout = r.nextInt((maximum - minimum) + 1) + minimum;
-                                output.setText("" + tempout);
+                              minimum = Integer.parseInt(tempminimum);
+                              maximum = Integer.parseInt(tempmaximum);
+                              if (maximum > minimum) {
+                                    tempout = r.nextInt((maximum - minimum) + 1) + minimum;
+                                    output.setText("" + tempout);
                             }
                         }
-                    }
-                });
+                   }
+              });
 
     }
 }
